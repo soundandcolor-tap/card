@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#07091f"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Sound And Color">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/sound-and-color-apple-touch-icon.png">
     <title>Sound And Color | Producción integral 360°</title>
     <meta name="description" content="Producción integral 360° de eventos científicos, corporativos y experiencias de marca con cobertura en 14 países.">
     <meta property="og:type" content="website">
@@ -88,6 +92,37 @@
             text-align: center;
             font-size: clamp(0.65rem, 3.2vw, 1rem) !important;
         }
+        .email-label,
+        .projects-label {
+            display: block;
+            min-width: 0;
+            overflow: hidden;
+            white-space: nowrap !important;
+            text-align: center;
+        }
+        .email-label {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 7rem);
+            font-size: clamp(0.7rem, 3.6vw, 1rem) !important;
+        }
+        .projects-label {
+            width: calc(100% - 5rem);
+            font-size: clamp(0.72rem, 3.8vw, 1rem) !important;
+        }
+
+        @media (max-width: 480px) {
+            .coverage-flags-row { flex-wrap: nowrap !important; gap: 2px !important; }
+            .coverage-flags-row .coverage-prefix { margin-right: 2px !important; font-size: .7rem; white-space: nowrap; }
+            header .coverage-flags-row img[src*="assets/flags/"] { width: 13px; height: 10px; }
+        }
+
+        @media (max-width: 350px) {
+            .coverage-flags-row { gap: 1px !important; }
+            .coverage-flags-row .coverage-prefix { margin-right: 1px !important; font-size: .65rem; }
+            header .coverage-flags-row img[src*="assets/flags/"] { width: 11.5px; height: 9px; }
+        }
 
         @media (max-width: 390px) {
             body > div { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
@@ -122,6 +157,30 @@
             #show-qr-btn { padding-left: .5rem !important; padding-right: .5rem !important; font-size: .875rem !important; }
             #show-instructions-btn { padding-top: .25rem !important; padding-bottom: .25rem !important; }
         }
+
+        /* Pantallas horizontales o portátiles bajos: encaja la tarjeta completa sin scroll. */
+        @media (min-width: 640px) and (max-height: 760px) {
+            body { padding-top: .5rem !important; padding-bottom: .5rem !important; }
+            body > div { padding-top: .75rem !important; padding-bottom: .75rem !important; }
+            header > div:first-child { margin-bottom: .4rem !important; }
+            header > div:nth-child(2) { width: 7rem !important; height: 4.25rem !important; }
+            header h1 { margin-top: .4rem !important; font-size: 1.5rem !important; line-height: 1.75rem !important; }
+            header p:first-of-type { margin-top: .1rem !important; font-size: .625rem !important; line-height: .9rem !important; }
+            header p:last-of-type { margin-top: .4rem !important; font-size: .75rem !important; line-height: 1.05rem !important; }
+            body > div > section { margin-top: .5rem !important; }
+            body > div > section > a { padding: .55rem !important; }
+            body > div > main { margin-top: .7rem !important; }
+            body > div > main > * + * { margin-top: .5rem !important; }
+            body > div > main > a,
+            body > div > main > button,
+            body > div > main > div { padding: .5rem !important; }
+            body > div > main span.grid { width: 2rem !important; height: 2rem !important; }
+            body > div > footer { margin-top: .75rem !important; gap: .4rem !important; }
+            #projects-btn,
+            #save-contact-btn,
+            #show-qr-btn { padding-top: .55rem !important; padding-bottom: .55rem !important; }
+            #show-instructions-btn { padding-top: 0 !important; padding-bottom: 0 !important; }
+        }
     </style>
 </head>
 <body class="flex items-center justify-center min-h-screen p-4 sm:p-6 text-white overflow-x-hidden">
@@ -149,7 +208,7 @@
                 <span class="block font-bold text-white">Producción Integral 360°</span>
                 <span class="block">Eventos Cientificos, Eventos Corporativos</span>
                 <span class="block">y Experiencias de Marcas</span>
-                <span class="mt-1 flex flex-wrap items-center justify-center gap-[3px] leading-5" aria-label="Cobertura en Guatemala, Panamá, Honduras, El Salvador, Nicaragua, Costa Rica, República Dominicana, Jamaica, Bahamas, Trinidad y Tobago, Curazao, Colombia, Perú y Argentina"><span class="mr-1">Cobertura en</span>
+                <span class="coverage-flags-row mt-1 flex flex-nowrap items-center justify-center gap-[3px] leading-5" aria-label="Cobertura en Guatemala, Panamá, Honduras, El Salvador, Nicaragua, Costa Rica, República Dominicana, Jamaica, Bahamas, Trinidad y Tobago, Curazao, Colombia, Perú y Argentina"><span class="coverage-prefix mr-1 flex-none">Cobertura en</span>
                     <img src="assets/flags/guatemala.svg" alt="Guatemala" title="Guatemala" class="h-4 w-5 rounded-[2px] object-cover">
                     <img src="assets/flags/panama.svg" alt="Panamá" title="Panamá" class="h-4 w-5 rounded-[2px] object-cover">
                     <img src="assets/flags/honduras.svg" alt="Honduras" title="Honduras" class="h-4 w-5 rounded-[2px] object-cover">
@@ -186,8 +245,11 @@
             <button id="phone-btn" type="button" class="group relative flex w-full items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-center transition-all duration-200 hover:border-cyan-400/40 hover:bg-white/[0.07]">
                 <span class="absolute left-4 grid h-10 w-10 place-items-center rounded-xl bg-cyan-400/10 text-cyan-300"><i data-lucide="phone" class="w-5 h-5"></i></span><span class="text-slate-100 font-semibold">(+502) 5514-4441</span><i data-lucide="chevron-right" class="absolute right-4 h-5 w-5 text-slate-500 transition-transform group-hover:translate-x-1"></i>
             </button>
+            <a id="website-btn" href="https://soundandcolor.net/" target="_blank" rel="noopener noreferrer" class="group relative flex w-full items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-center transition-all duration-200 hover:border-blue-400/40 hover:bg-white/[0.07]">
+                <span class="absolute left-4 grid h-10 w-10 place-items-center rounded-xl bg-blue-400/10 text-blue-300"><i data-lucide="globe" class="w-5 h-5"></i></span><span class="text-slate-100 font-semibold">soundandcolor.net</span><i data-lucide="external-link" class="absolute right-4 h-5 w-5 text-slate-500 transition-transform group-hover:translate-x-1"></i>
+            </a>
             <a href="mailto:soundandcolorbtl@gmail.com" class="group relative flex items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-center transition-all duration-200 hover:border-fuchsia-400/40 hover:bg-white/[0.07]">
-                <span class="absolute left-4 grid h-10 w-10 place-items-center rounded-xl bg-fuchsia-400/10 text-fuchsia-300"><i data-lucide="mail" class="w-5 h-5"></i></span><span class="break-all text-sm text-slate-100 font-semibold sm:text-base">soundandcolorbtl@gmail.com</span>
+                <span class="absolute left-4 grid h-10 w-10 place-items-center rounded-xl bg-fuchsia-400/10 text-fuchsia-300"><i data-lucide="mail" class="w-5 h-5"></i></span><span class="email-label text-slate-100 font-semibold">soundandcolorbtl@gmail.com</span>
             </a>
             <button id="coverage-btn" type="button" class="group flex w-full items-center rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-left transition-all duration-200 hover:border-violet-400/40 hover:bg-white/[0.07]">
                 <span class="grid h-10 w-10 flex-none place-items-center rounded-xl bg-violet-400/10 text-violet-300"><i data-lucide="globe-2" class="w-5 h-5"></i></span><span class="coverage-label ml-4 text-slate-100 font-semibold">Cobertura internacional en 14 países</span><i data-lucide="chevron-right" class="ml-auto h-5 w-5 flex-none text-slate-500 transition-transform group-hover:translate-x-1"></i>
@@ -195,12 +257,12 @@
         </main>
 
         <!-- Botones de Acción --><footer class="relative mt-8 flex flex-col gap-3 fade-in-up" style="animation-delay: 700ms;">
-            <a id="projects-btn" href="https://www.instagram.com/soundandcolorbtl/" target="_blank" rel="noopener noreferrer" class="flex w-full items-center justify-center rounded-2xl bg-gradient-to-r from-cyan-400 via-blue-500 to-fuchsia-500 px-4 py-3.5 font-bold text-white shadow-lg shadow-fuchsia-950/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl">
-                <i data-lucide="sparkles" class="w-5 h-5 mr-3"></i>Algunos proyectos desarrollados
+            <a id="projects-btn" href="https://www.instagram.com/soundandcolorbtl/" target="_blank" rel="noopener noreferrer" class="relative flex w-full items-center justify-center rounded-2xl bg-gradient-to-r from-cyan-400 via-blue-500 to-fuchsia-500 px-4 py-3.5 font-bold text-white shadow-lg shadow-fuchsia-950/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl">
+                <i data-lucide="sparkles" class="absolute left-4 w-5 h-5"></i><span class="projects-label">Algunos proyectos desarrollados</span>
             </a>
-            <button id="save-contact-btn" class="flex w-full items-center justify-center rounded-2xl border border-white/15 bg-white/10 px-4 py-3.5 font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/15">
+            <a id="save-contact-btn" href="Sound_And_Color.vcf" download="Sound_And_Color.vcf" class="flex w-full items-center justify-center rounded-2xl border border-white/15 bg-white/10 px-4 py-3.5 font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/15">
                 <i data-lucide="user-plus" class="w-5 h-5 mr-3"></i>Guardar Contacto
-            </button>
+            </a>
             <button id="show-qr-btn" class="flex w-full items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 px-4 py-3.5 font-bold text-cyan-100 transition-all duration-200 hover:-translate-y-0.5 hover:bg-cyan-300/15">
                  <i data-lucide="share-2" class="w-5 h-5 mr-3"></i>Compartir / QR
             </button>
@@ -331,7 +393,7 @@
     </div>
 
     <!-- MODAL DE INSTRUCCIONES DE INSTALACIÓN --><div id="install-instructions-modal" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-50">
-        <div class="modal-content bg-slate-50 rounded-2xl shadow-xl max-w-2xl w-full relative scale-95 opacity-0 overflow-hidden">
+        <div class="modal-content max-h-[90vh] overflow-y-auto bg-slate-50 rounded-2xl shadow-xl max-w-2xl w-full relative scale-95 opacity-0">
              <!-- Contenido se inyecta con JS --></div>
     </div>
     
@@ -392,16 +454,38 @@
                 }
             };
 
+            const fitCenteredLabel = (selector, fallbackSize) => {
+                const label = document.querySelector(selector);
+                if (!label) return;
+
+                label.style.removeProperty('font-size');
+                const baseSize = parseFloat(getComputedStyle(label).fontSize) || fallbackSize;
+                label.style.setProperty('font-size', `${baseSize}px`, 'important');
+
+                if (label.scrollWidth > label.clientWidth) {
+                    const fittedSize = baseSize * ((label.clientWidth - 2) / label.scrollWidth);
+                    label.style.setProperty('font-size', `${fittedSize}px`, 'important');
+                }
+            };
+
+            const fitRequestedLabels = () => {
+                fitCenteredLabel('.email-label', 16);
+                fitCenteredLabel('.projects-label', 16);
+            };
+
             fitServiceTagline();
             fitCoverageLabel();
+            fitRequestedLabels();
             window.addEventListener('resize', () => {
                 fitServiceTagline();
                 fitCoverageLabel();
+                fitRequestedLabels();
             }, { passive: true });
             if (document.fonts && document.fonts.ready) {
                 document.fonts.ready.then(() => {
                     fitServiceTagline();
                     fitCoverageLabel();
+                    fitRequestedLabels();
                 });
             }
 
@@ -437,35 +521,51 @@
             const instructionsModalContent = document.querySelector('#install-instructions-modal .modal-content');
             instructionsModalContent.innerHTML = `
                 <div class="bg-gradient-to-r from-cyan-500 to-fuchsia-600 p-5 text-center relative">
-                    <h2 class="text-xl font-bold text-white">Instalar Aplicación</h2>
-                    <p class="text-white/80 text-sm mt-1">Ten un acceso directo en tu móvil</p>
+                    <h2 class="text-xl font-bold text-white">Agregar a Inicio</h2>
+                    <p class="text-white/80 text-sm mt-1">Usa esta tarjeta como una aplicación</p>
                     <button id="close-instructions-modal-btn" class="absolute top-3 right-3 text-white/70 hover:text-white transition-colors">
                         <i data-lucide="x" class="w-6 h-6"></i>
                     </button>
                 </div>
-                <div class="p-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <!-- Columna iPhone -->
-                    <div class="bg-white p-5 rounded-xl border border-slate-200">
-                        <h3 class="text-lg font-semibold text-slate-800 mb-3 flex items-center">
-                            <i data-lucide="apple" class="w-5 h-5 mr-2 text-slate-500"></i>
-                            <span>Para iPhone / iPad</span>
-                        </h3>
-                        <ol class="space-y-3 text-slate-600 text-sm">
-                            <li class="flex items-start"><span class="font-bold text-cyan-600 mr-2">1.</span><span>Toca el ícono de <strong>Compartir</strong> <i data-lucide="square-arrow-up" class="inline-block w-4 h-4 -mt-0.5"></i> en Safari.</span></li>
-                            <li class="flex items-start"><span class="font-bold text-cyan-600 mr-2">2.</span><span>Busca y selecciona <strong>"Añadir a pantalla de inicio"</strong>.</span></li>
-                            <li class="flex items-start"><span class="font-bold text-cyan-600 mr-2">3.</span><span>Confirma la acción tocando en <strong>"Añadir"</strong>.</span></li>
-                        </ol>
+                <div class="p-5 space-y-4">
+                    <div class="rounded-xl border border-cyan-200 bg-cyan-50 px-4 py-3 text-sm text-slate-700">
+                        <strong>Importante:</strong> “Guardar Contacto” añade los datos a Contactos. Estas instrucciones sirven para colocar el ícono de la tarjeta en la pantalla de inicio.
                     </div>
-                    <!-- Columna Android -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-white p-5 rounded-xl border border-slate-200">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-3 flex items-center">
+                                <i data-lucide="compass" class="w-5 h-5 mr-2 text-blue-600"></i>
+                                <span>iPhone · Safari</span>
+                            </h3>
+                            <ol class="space-y-2.5 text-slate-600 text-sm">
+                                <li class="flex items-start"><span class="font-bold text-cyan-600 mr-2">1.</span><span>Toca el botón <strong>Más •••</strong> abajo a la derecha.</span></li>
+                                <li class="flex items-start"><span class="font-bold text-cyan-600 mr-2">2.</span><span>Selecciona <strong>“Compartir”</strong>.</span></li>
+                                <li class="flex items-start"><span class="font-bold text-cyan-600 mr-2">3.</span><span>Desplázate hacia abajo y toca <strong>“Agregar a Inicio”</strong>. Si no aparece, entra en <strong>“Editar acciones”</strong> y agrégala.</span></li>
+                                <li class="flex items-start"><span class="font-bold text-cyan-600 mr-2">4.</span><span>Activa <strong>“Abrir como app web”</strong>.</span></li>
+                                <li class="flex items-start"><span class="font-bold text-cyan-600 mr-2">5.</span><span>Toca <strong>“Agregar”</strong>.</span></li>
+                            </ol>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl border border-slate-200">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-3 flex items-center">
+                                <i data-lucide="chrome" class="w-5 h-5 mr-2 text-cyan-600"></i>
+                                <span>iPhone · Chrome</span>
+                            </h3>
+                            <ol class="space-y-2.5 text-slate-600 text-sm">
+                                <li class="flex items-start"><span class="font-bold text-cyan-600 mr-2">1.</span><span>Toca <strong>Compartir</strong> <i data-lucide="square-arrow-up" class="inline-block w-4 h-4 -mt-0.5"></i>.</span></li>
+                                <li class="flex items-start"><span class="font-bold text-cyan-600 mr-2">2.</span><span>Toca <strong>“Añadir a pantalla de inicio”</strong>.</span></li>
+                                <li class="flex items-start"><span class="font-bold text-cyan-600 mr-2">3.</span><span>Confirma los datos y toca <strong>“Añadir”</strong>.</span></li>
+                            </ol>
+                        </div>
+                    </div>
                     <div class="bg-white p-5 rounded-xl border border-slate-200">
                         <h3 class="text-lg font-semibold text-slate-800 mb-3 flex items-center">
                             <i data-lucide="smartphone" class="w-5 h-5 mr-2 text-slate-500"></i>
-                            <span>Para Android</span>
+                            <span>Android · Chrome</span>
                         </h3>
-                        <ol class="space-y-3 text-slate-600 text-sm">
-                            <li class="flex items-start"><span class="font-bold text-cyan-600 mr-2">1.</span><span>Toca el menú de <strong>tres puntos</strong> <i data-lucide="more-vertical" class="inline-block w-4 h-4 -mt-0.5"></i> en Chrome.</span></li>
-                            <li class="flex items-start"><span class="font-bold text-cyan-600 mr-2">2.</span><span>Selecciona <strong>"Instalar aplicación"</strong> o "Añadir a p. de inicio".</span></li>
-                            <li class="flex items-start"><span class="font-bold text-cyan-600 mr-2">3.</span><span>Sigue las instrucciones para confirmar la instalación.</span></li>
+                        <ol class="grid gap-2.5 text-slate-600 text-sm sm:grid-cols-3">
+                            <li class="flex items-start"><span class="font-bold text-cyan-600 mr-2">1.</span><span>Toca el menú <strong>⋮</strong> de Chrome.</span></li>
+                            <li class="flex items-start"><span class="font-bold text-cyan-600 mr-2">2.</span><span>Toca <strong>“Instalar aplicación”</strong> o <strong>“Añadir a pantalla de inicio”</strong>.</span></li>
+                            <li class="flex items-start"><span class="font-bold text-cyan-600 mr-2">3.</span><span>Confirma con <strong>“Instalar”</strong> o <strong>“Añadir”</strong>.</span></li>
                         </ol>
                     </div>
                 </div>`;
@@ -506,20 +606,6 @@
                  nativeShareBtn.style.display = 'none'; // Ocultar si no es compatible
             }
 
-            // Lógica para guardar contacto
-            document.getElementById('save-contact-btn').addEventListener('click', () => {
-                const logoUrl = new URL('assets/images/sound-and-color-logo.png', window.location.href).href;
-                const vCardData = `BEGIN:VCARD\nVERSION:3.0\nFN:Sound And Color\nORG:Sound And Color\nTITLE:Producción integral 360 de eventos\nTEL;TYPE=WORK,VOICE:+50255144441\nEMAIL:soundandcolorbtl@gmail.com\nURL:https://www.instagram.com/soundandcolorbtl/\nNOTE:Cobertura internacional en 14 países\nPHOTO;VALUE=URI:${logoUrl}\nEND:VCARD`;
-                const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8' });
-                const url = URL.createObjectURL(blob);
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = 'Sound_And_Color.vcf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                URL.revokeObjectURL(url);
-            });
         });
     </script>
 </body>

@@ -9,8 +9,14 @@
   "description": "Producción integral 360° de eventos científicos, corporativos y experiencias de marca con cobertura en 14 países.",
   "icons": [
     {
-      "src": "assets/images/sound-and-color-logo.png",
-      "sizes": "any",
+      "src": "assets/images/sound-and-color-app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/sound-and-color-app-icon-512.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     }

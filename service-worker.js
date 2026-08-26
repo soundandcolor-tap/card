@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sound-and-color-v18';
+const CACHE_NAME = 'sound-and-color-v21';
 const LOCAL_ASSETS = [
   './',
   './index.html',
@@ -13,6 +13,11 @@ const LOCAL_ASSETS = [
   './assets/fonts/inter-700.ttf',
   './assets/images/perfil.png',
   './assets/images/sound-and-color-logo.png',
+  './assets/images/sound-and-color-app-icon-192.png',
+  './assets/images/sound-and-color-app-icon-512.png',
+  './assets/images/sound-and-color-apple-touch-icon.png',
+  './assets/images/sound-and-color-contact.jpg',
+  './Sound_And_Color.vcf',
   './assets/images/og.png',
   './assets/flags/guatemala.svg',
   './assets/flags/panama.svg',
