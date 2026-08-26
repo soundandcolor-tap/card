@@ -1,0 +1,27 @@
+TARJETA DIGITAL — SOUND AND COLOR
+
+Archivo principal:
+  index.html
+
+Uso recomendado:
+  Publique toda esta carpeta en un servidor web o servicio de hosting.
+  Para abrirla localmente con todas las funciones de instalación, use un servidor local.
+
+Contenido:
+  - Tarjeta de perfil y datos de contacto
+  - Enlaces a redes sociales, teléfono, correo y ubicación
+  - Enlaces oficiales a Instagram y Facebook
+  - Acceso a proyectos desarrollados en Instagram
+  - Descarga de contacto en formato vCard
+  - Código QR y función de compartir
+  - Instrucciones para instalar en iPhone/iPad y Android
+  - Identidad visual Sound And Color en azul profundo, cian y magenta
+  - Manifest y service worker para uso como aplicación web
+  - Librerías, tipografías y recursos principales guardados localmente
+  - TARJETA1-original.html como copia intacta del archivo recibido
+
+Identidad y contacto:
+  - Instagram: https://www.instagram.com/soundandcolorbtl/
+  - Facebook: https://www.facebook.com/SoundAndColorBtl/
+  - Teléfono / WhatsApp: +502 5514 4441
+  - Correo: soundandcolorbtl@gmail.com
