@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sound-and-color-v23-light';
+const CACHE_NAME = 'sound-and-color-v24-zoom';
 const LOCAL_ASSETS = [
   './',
   './index.html',

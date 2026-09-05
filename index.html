@@ -267,7 +267,10 @@
         .brand-summary > .brand-title { font-size: clamp(1rem,4.3vw,1.25rem); white-space: normal; }
         .brand-summary > .brand-detail { margin-top: .4rem; font-size: 1rem; font-weight: 400; letter-spacing: 0; color: #cbd5e1; background: none; white-space: normal; }
         #save-contact-btn, #show-qr-btn { grid-column: 1 / -1; font-size: 1rem !important; padding: .75rem 1rem !important; }
-    </style>
+    
+        body > div { --button-font: 16px; }
+        #phone-btn > span:not(.grid), #website-btn > span:not(.grid), .email-label, .coverage-label, .projects-label, .presentation-label, #save-contact-btn > span:last-child, #show-qr-btn > span:last-child { font-size: var(--button-font) !important; white-space: nowrap !important; }
+</style>
 </head>
 <body class="flex items-center justify-center min-h-screen p-4 sm:p-6 text-white overflow-x-hidden">
 
@@ -343,8 +346,8 @@
         </main>
 
         <!-- Botones de Acción --><footer class="relative mt-8 flex flex-col gap-3 fade-in-up" style="animation-delay: 700ms;">
-            <a id="presentation-btn" href="presentacion.html" aria-label="Ver presentación de la empresa" class="group relative flex w-full items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 px-4 py-3.5 font-bold text-cyan-100 transition-all duration-200 hover:-translate-y-0.5 hover:bg-cyan-300/15" style="grid-column: 1 / -1; gap: .65rem; text-align: center;">
-                <span class="presentation-icon action-icon absolute left-4 grid h-10 w-10 place-items-center"><i data-lucide="file-text" class="w-5 h-5" aria-hidden="true"></i></span><span class="presentation-label">Ver presentación de la empresa</span>
+            <a id="presentation-btn" href="presentacion.html" aria-label="Ver presentación" class="group relative flex w-full items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 px-4 py-3.5 font-bold text-cyan-100 transition-all duration-200 hover:-translate-y-0.5 hover:bg-cyan-300/15" style="grid-column: 1 / -1; gap: .65rem; text-align: center;">
+                <span class="presentation-icon action-icon absolute left-4 grid h-10 w-10 place-items-center"><i data-lucide="file-text" class="w-5 h-5" aria-hidden="true"></i></span><span class="presentation-label">Ver presentación</span>
             <i data-lucide="chevron-right" aria-hidden="true" class="absolute right-4 h-5 w-5 text-slate-500 transition-transform group-hover:translate-x-1"></i></a>
             <a id="projects-btn" href="https://www.instagram.com/soundandcolorbtl/" target="_blank" rel="noopener noreferrer" class="group relative flex w-full items-center justify-center rounded-2xl bg-gradient-to-r from-cyan-400 via-blue-500 to-fuchsia-500 px-4 py-3.5 font-bold text-white shadow-lg shadow-fuchsia-950/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl">
                 <span class="action-icon absolute left-4"><i data-lucide="sparkles" class="w-5 h-5" aria-hidden="true"></i></span><span class="projects-label">Ver algunos proyectos</span>
@@ -700,7 +703,15 @@
 
         });
     </script>
-</body>
+<script>
+const uniformLabels = () => {
+ const labels=[...document.querySelectorAll('#phone-btn > span:not(.grid), #website-btn > span:not(.grid), .email-label, .coverage-label, .projects-label, .presentation-label, #save-contact-btn > span:last-child, #show-qr-btn > span:last-child')];
+ document.body.firstElementChild.style.setProperty('--button-font','16px');
+ const size=Math.min(16,...labels.map(el=>16*Math.min(1,el.clientWidth/Math.max(1,el.scrollWidth))));
+ document.body.firstElementChild.style.setProperty('--button-font',`${size}px`);
+};
+window.addEventListener('load',uniformLabels);window.addEventListener('resize',()=>requestAnimationFrame(uniformLabels));document.fonts.ready.then(uniformLabels);
+</script></body>
 </html>
 
 
