@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sound-and-color-v21';
+const CACHE_NAME = 'sound-and-color-v22-icons1';
 const LOCAL_ASSETS = [
   './',
   './index.html',
@@ -54,6 +54,8 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
+  // Let the browser handle the presentation without caching it as the card page.
+  if (new URL(event.request.url).pathname.endsWith('/Presentacion-Sound-And-Color.pdf')) return;
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request)

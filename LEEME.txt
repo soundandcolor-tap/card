@@ -1,27 +1,11 @@
-TARJETA DIGITAL — SOUND AND COLOR
+VERSIÓN 22 — SOUND AND COLOR
+Incluye el botón «Ver presentación de la empresa» y el PDF proporcionado.
 
-Archivo principal:
-  index.html
+Para actualizar el sitio existente:
+1. Descomprime el ZIP.
+2. Sube todo el contenido de esta carpeta al repositorio soundandcolor-tap/card, reemplazando los archivos anteriores. Incluye el PDF.
+3. Guarda los cambios con Commit changes.
+4. Cuando GitHub termine de publicar, abre https://soundandcolor-tap.github.io/card/?v=22
 
-Uso recomendado:
-  Publique toda esta carpeta en un servidor web o servicio de hosting.
-  Para abrirla localmente con todas las funciones de instalación, use un servidor local.
-
-Contenido:
-  - Tarjeta de perfil y datos de contacto
-  - Enlaces a redes sociales, teléfono, correo y ubicación
-  - Enlaces oficiales a Instagram y Facebook
-  - Acceso a proyectos desarrollados en Instagram
-  - Descarga de contacto en formato vCard
-  - Código QR y función de compartir
-  - Instrucciones para instalar en iPhone/iPad y Android
-  - Identidad visual Sound And Color en azul profundo, cian y magenta
-  - Manifest y service worker para uso como aplicación web
-  - Librerías, tipografías y recursos principales guardados localmente
-  - TARJETA1-original.html como copia intacta del archivo recibido
-
-Identidad y contacto:
-  - Instagram: https://www.instagram.com/soundandcolorbtl/
-  - Facebook: https://www.facebook.com/SoundAndColorBtl/
-  - Teléfono / WhatsApp: +502 5514 4441
-  - Correo: soundandcolorbtl@gmail.com
+El enlace de la tarjeta y el QR siguen siendo los mismos.
+Para ver la tarjeta localmente, abre index.html desde la carpeta descomprimida.
