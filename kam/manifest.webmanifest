@@ -1,0 +1,25 @@
+{
+  "name": "Sound And Color | ProducciÃ³n integral 360Â°",
+  "short_name": "Sound And Color",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#07091f",
+  "theme_color": "#07091f",
+  "description": "ProducciÃ³n integral 360Â° de eventos cientÃ­ficos, corporativos y experiencias de marca con cobertura en 14 paÃ­ses.",
+  "icons": [
+    {
+      "src": "assets/images/sound-and-color-app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/sound-and-color-app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "id": "/card/kam/"
+}
