@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sound-and-color-v25-iphone';
+const CACHE_NAME = 'sound-and-color-principal-20260914';
 const LOCAL_ASSETS = [
   './',
   './index.html',
@@ -48,7 +48,7 @@ self.addEventListener('install', event => {
 
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))))
+    caches.keys().then(keys => Promise.all(keys.filter(key => key.startsWith('sound-and-color-principal-') && key !== CACHE_NAME).map(key => caches.delete(key))))
   );
   self.clients.claim();
 });
