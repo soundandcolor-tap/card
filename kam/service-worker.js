@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sound-and-color-kam-20260914-hd';
+const CACHE_NAME = 'sound-and-color-kam-20260921-88d8072e';
 const LOCAL_ASSETS = [
   './',
   './index.html',
